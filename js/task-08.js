@@ -1,5 +1,4 @@
 const formEl = document.querySelector(".login-form");
-console.dir(formEl);
 formEl.addEventListener("submit", onLogin);
 function onLogin(evt) {
   evt.preventDefault();
@@ -7,6 +6,11 @@ function onLogin(evt) {
   if (email.value === "" || password.value === "") {
     alert("All fields must be fill");
   }
-  console.log(`email = ${email.value}, password = ${password.value}`);
+  console.log(evt.currentTarget.elements);
+  const obj = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(obj);
   evt.currentTarget.reset();
 }
